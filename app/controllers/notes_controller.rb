@@ -1,6 +1,12 @@
 class NotesController < ApplicationController
     def index
-        @notes = Note.all
+        # @notes = Note.all.sort.reverse x
+        @notes = Note.order(id: :desc)
+        # @notes = Note.all.order(id: :desc)
+    end
+
+    def show
+        @note = Note.find(params[:id])
     end
 
     def new
