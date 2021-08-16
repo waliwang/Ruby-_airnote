@@ -1,0 +1,17 @@
+<h1>註冊會員</h1>
+
+<%= form_for(@user, url: "/users") do |f| %>
+
+<%= f.lable :email %>
+<%= f.text_filed :email %>
+
+<%= f.lable :password %>
+<%= f.text_filed :password %>
+
+<%= f.lable :account %>
+<%= f.text_filed :account %>
+
+<%= f.submit %>
+
+
+<% end %>

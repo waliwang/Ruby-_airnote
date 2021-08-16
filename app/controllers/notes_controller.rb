@@ -31,6 +31,7 @@ class NotesController < ApplicationController
 
 
     def create
+
         # render html: params[:note]
         # cc = {"title"=>"2222", "content"=>"3333"}
         # note = Note.new(title: title, content: content)
@@ -48,12 +49,13 @@ class NotesController < ApplicationController
             render :new
             # app/views/notes/new.html.erb
             # redirect_to "/notes/new"
-            ##待處理
+            #待處理
         end
     end
 
     def destroy
-        @note.destroy
+        # @note.destroy
+        @note.update(deleted_at: Time.now)
         redirect_to "/notes"
     end
 
@@ -64,7 +66,7 @@ class NotesController < ApplicationController
     end
 
     def find_note
-            @note = Note.find(params[:id])
+        @note = Note.find(params[:id])
     end
 
   
