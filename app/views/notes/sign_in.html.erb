@@ -1,11 +1,7 @@
-<h1>註冊會員</h1>
+<h1>會員登錄</h1>
 
-<% if @user.errors.any? %>
-<ul>
-    
-</ul>
+<%= form_for(@user, url: '/') do |f| %>
 
-<%= form_for(@user, url: "/users") do |f| %>
 
 <div class="field">
 <%= f.lable :email %>
@@ -17,11 +13,6 @@
 <%= f.password_filed :password %>
 </div>
 
-<div class="field">
-<%= f.lable :password_confirmation %>
-<%= f.password_filed :password_confirmation %>    
-</div>
-
 
 <div class="field">
 <%= f.lable :account %>
@@ -29,7 +20,6 @@
 </div>
 
 
-<%= f.submit %>
-
+<%= f.submit "login" %>
 
 <% end %>
